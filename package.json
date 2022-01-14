@@ -1,0 +1,39 @@
+{
+    "name": "3bc",
+    "displayName": "3BC",
+    "description": "3BC Syntax Highlight",
+    "version": "0.0.1",
+    "publisher": "microhobby",
+    "icon": "3bc-logo-mid.png",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "url": "https://github.com/microhobby/vscode-3bc"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "3bc",
+                "aliases": [
+                    "3BC",
+                    "3bc"
+                ],
+                "extensions": [
+                    ".3bc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "3bc",
+                "scopeName": "source.3bc",
+                "path": "./syntaxes/3bc.tmLanguage.json"
+            }
+        ]
+    }
+}

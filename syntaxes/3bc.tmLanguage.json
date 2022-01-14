@@ -1,0 +1,71 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "3BC",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#calls"
+		},
+		{
+			"include": "#consts"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#address"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.3bc",
+				"match": "(?i)\\b(mode|goto|fgto|zgto|pgto|ngto)\\b"
+			}]
+		},
+		"calls": {
+			"patterns": [{
+				"name": "entity.name.class",
+				"match": "(?i)\\b(STRB|STRI|FREE|MATH|NB02|STRC|ALOC|NB08|STRO|MOFF|PULL|NB10|STRX|MUSE|SPIN|NB16|MMAX|PUSH|MMIN)\\b"
+			}]
+		},
+		"consts": {
+			"patterns": [{
+				"name": "constant.language",
+				"match": "(?i)\\b(nill|skip|full)\\b"
+			}]
+		},
+		"number": {
+            "match": "(0x|0d|0o)([\\da-fA-F]+|\\d+)|[0-9]+",
+            "name": "constant.numeric"
+        },
+		"strings": {
+			"name": "string.quoted.single.3bc",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.3bc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+            "match": "(#|;).*",
+            "name": "comment.line.double-dash"
+        },
+		"address": {
+			"match": ":[a-zA-Z_$0-9]*",
+			"name": "variable.other"
+		}
+	},
+	"scopeName": "source.3bc"
+}
